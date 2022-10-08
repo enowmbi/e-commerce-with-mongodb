@@ -54,6 +54,20 @@ gem "bson_ext"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # Add annotate for anotating models
+  gem "annotate"
+
+  # Add rspec-rails for testing
+  gem "rspec-rails"
+
+  # Add simplecov for test/code coverage
+  gem "simplecov", require: false
+
+  # Add factory_bot_rails for generating factories
+  gem "factory_bot_rails"
+
+  # Add shoulda-matchers for oneline matchers /expectations
+  gem "shoulda-matchers"
 end
 
 group :development do
