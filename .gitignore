@@ -18,7 +18,8 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 
-/coverage/*
+# Ingore coverage files
+coverage/*
 
 
 /public/assets
