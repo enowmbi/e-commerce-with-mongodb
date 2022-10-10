@@ -59,6 +59,7 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "e_commerce_with_mongodb_production"
 
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 } # TODO: replace localhost and port with actual server and port
   config.action_mailer.perform_caching = false
 
   # Ignore bad email addresses and do not raise email delivery errors.
