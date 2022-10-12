@@ -46,10 +46,7 @@ gem "bootsnap", require: false
 gem "devise" 
 
 # Use mongoid - ODM(Object Document Mapper) for connecting to mongodb
-gem "mongoid"
-
-# Use bson_ext for accelerating ruby bson serialization
-gem "bson_ext"
+gem "mongoid", "~> 8.0.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
