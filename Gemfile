@@ -65,6 +65,9 @@ group :development, :test do
 
   # Add shoulda-matchers for oneline matchers /expectations
   gem "shoulda-matchers"
+
+  # Use letter_opener for opening letters in development
+  gem "letter_opener"
 end
 
 group :development do
