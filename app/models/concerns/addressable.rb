@@ -11,6 +11,6 @@ module Addressable
     field :street2, type: String
     field :zip, type: String
 
-    embedded_in :User
+    embedded_in :user
   end
 end

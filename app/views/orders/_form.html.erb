@@ -1,0 +1,57 @@
+<%= form_with(model: order) do |form| %>
+  <% if order.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+        <% order.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :order_date, style: "display: block" %>
+    <%= form.date_field :order_date %>
+  </div>
+
+  <div>
+    <%= form.label :order_number, style: "display: block" %>
+    <%= form.number_field :order_number %>
+  </div>
+
+  <div>
+    <%= form.label :total_amount, style: "display: block" %>
+    <%= form.text_field :total_amount %>
+  </div>
+
+  <div>
+    <%= form.label :total_before_tax, style: "display: block" %>
+    <%= form.text_field :total_before_tax %>
+  </div>
+
+  <div>
+    <%= form.label :total_after_tax, style: "display: block" %>
+    <%= form.text_field :total_after_tax %>
+  </div>
+
+  <div>
+    <%= form.label :tax_percent, style: "display: block" %>
+    <%= form.text_field :tax_percent %>
+  </div>
+
+  <div>
+    <%= form.label :discount_amount, style: "display: block" %>
+    <%= form.text_field :discount_amount %>
+  </div>
+
+  <div>
+    <%= form.label :order_status, style: "display: block" %>
+    <%= form.text_field :order_status %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
