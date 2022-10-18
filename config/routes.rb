@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   root "products#index"
-  devise_for :users # do
-  # member do
+
+  resources :users, only: :show
+
+  devise_for :user
+
   resources :orders
-  # end
-  # end
+
   resources :products
 end
