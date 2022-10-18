@@ -69,6 +69,9 @@ group :development, :test do
   # Add shoulda-matchers for oneline matchers /expectations
   gem "shoulda-matchers"
 
+  # RSpec matchers and macros for Mongoid.
+  gem "mongoid-rspec"
+
   # Use letter_opener for opening letters in development
   gem "letter_opener"
 end
