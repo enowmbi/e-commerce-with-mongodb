@@ -6,11 +6,9 @@
       <div class="sub-details" style="margin-left: 30px">
         <b>First Name: </b><%= @user.first_name %>
       <br/>
-      <b>Last Name: </b><%= @user.last_name %>
+        <b>Last Name: </b><%= @user.last_name %>
     <br/>
-    <b>Username: </b><%= @user.username %>
-  <br/>
-  <b>Email: </b><%= @user.email %>
+        <b>Email: </b><%= @user.email %>
 <br/>
       </div>
       <%= link_to("Edit Account", edit_user_registration_path, class: "btn-square-less-space") %>
@@ -18,7 +16,5 @@
 
     <hr/>
   </div>
-  <div id="back-to-courses">
     <%= link_to("Back", :back) %>
-  </div>
 </main>
