@@ -1,0 +1,22 @@
+<header>
+  <div class="left-nav">
+    <div class="app-logo">
+      <%= link_to(image_tag("logo.png",alt: "Redstore Logo"), root_path) %>
+    </div>
+  </div>
+  <nav>
+    <ul>
+      <li><%= link_to("Home", root_path, class: "current-page") %></li>
+      <li><%= link_to("About", root_path) %></li>
+      <li><%= link_to("Contact", root_path) %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to("Account", root_path) %></li>
+        <li><%= link_to("Signout", destroy_user_session_path, data: { "turbo-method": :delete }) %></li>
+      <% else %>
+        <li><%= link_to("Signup", new_user_registration_path) %></li>
+        <li><%= link_to("Signin", new_user_session_path) %></li>
+      <% end %>
+      <li><%= link_to(image_tag("cart.png", class: "shopping-cart", alt: "shopping cart"), root_path) %></li>
+    </ul>
+  </nav>
+</header>
