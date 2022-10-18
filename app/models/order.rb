@@ -1,6 +1,7 @@
 class Order
   include Mongoid::Document
   include Mongoid::Timestamps
+
   field :order_date, type: Date
   field :order_number, type: Integer
   field :order_status, type: String
