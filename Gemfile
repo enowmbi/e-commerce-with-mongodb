@@ -51,6 +51,15 @@ gem "mongoid", "~> 8.0.2"
 # Use stripe for online payment processing
 gem "stripe"
 
+# Use Mongoid-paperclip for attaching and storing images to documents
+gem "mongoid-paperclip"
+
+# Add aws sdk for storing to s3 buckets
+gem  "aws-sdk-s3"
+
+# Use enumerize to add enums to document fields
+gem "enumerize"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
