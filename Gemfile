@@ -52,7 +52,7 @@ gem "mongoid", "~> 8.0.2"
 gem "stripe"
 
 # Use Mongoid-paperclip for attaching and storing images to documents
-gem "mongoid-paperclip"
+gem "mongoid-paperclip", require: "mongoid_paperclip"
 
 # Add aws sdk for storing to s3 buckets
 gem  "aws-sdk-s3"
