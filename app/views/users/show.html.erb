@@ -3,7 +3,7 @@
   <div id="<%= dom_id @user %>">
     <div class="user-details"> 
       <% if @user.image.present? %>
-        <%= image_tag(@user.image.url, class: "image") %>                                         
+        <%= image_tag(@user.image.url(:medium), class: "image") %>                                         
       <% else %>
         <%= image_tag("user-preview.png", class: "image") %>                                         
       <% end %>

@@ -40,7 +40,8 @@ class User
   field :locked_at,       type: Time
   include Mongoid::Timestamps
 
-  has_mongoid_attached_file :image
+  has_mongoid_attached_file :image, styles: { medium: "300x300", thumb: "100x100#", original: "1920x1680>" }
+
   validates_attachment_content_type :image, content_type: %w[image/jpeg image/jpg image/png]
 
   embeds_one :billing_address
