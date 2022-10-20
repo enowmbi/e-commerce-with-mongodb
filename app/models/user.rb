@@ -41,6 +41,7 @@ class User
   include Mongoid::Timestamps
 
   has_mongoid_attached_file :image
+  validates_attachment_content_type :image, content_type: %w[image/jpeg image/jpg image/png]
 
   embeds_one :billing_address
   embeds_one :shipping_address
