@@ -2,7 +2,11 @@
   <h2 class="title"> Account Profile(<%= "#{current_user.first_name} #{current_user.last_name}" %>)</h2>
   <div id="<%= dom_id @user %>">
     <div class="user-details"> 
-      <%# <%= image_tag(preview_image(@user, :medium, "user-preview.png"), class: "image") %1> %>                                         
+      <% if @user.image.present? %>
+        <%= image_tag(@user.image.url, class: "image") %>                                         
+      <% else %>
+        <%= image_tag("user-preview.png", class: "image") %>                                         
+      <% end %>
       <div class="sub-details" style="margin-left: 30px">
         <b>First Name: </b><%= @user.first_name %>
       <br/>
