@@ -2,46 +2,15 @@
   <h2 class="title"> Account Profile(<%= "#{current_user.first_name} #{current_user.last_name}" %>)</h2>
   <div id="<%= dom_id @user %>">
     <div class="user-details"> 
-      <% if @user.image.present? %>
-        <%= image_tag(@user.image.url(:medium), class: "image") %>                                         
-      <% else %>
-        <%= image_tag("user-preview.png", class: "image") %>                                         
-      <% end %>
-      <div class="sub-details" style="margin-left: 30px">
-        <b>First Name: </b><%= @user.first_name %>
-      <br/>
-      <b>Last Name: </b><%= @user.last_name %>
-    <br/>
-    <b>Email: </b><%= @user.email %>
-  <br/>
+      <%= render "shared/user_details" %>
       <p>
       <div class="billing-address"> 
-        <b>Country: </b><%= @user.billing_address[:country] %>
-      <br/>
-      <b>City: </b><%= @user.billing_address[:city] %>
-    <br/>
-    <b>State: </b><%= @user.billing_address[:state] %>
-  <br/>
-  <b>Street1: </b><%= @user.billing_address[:street1] %>
-<br/>
-<b>Street2: </b><%= @user.billing_address[:street2] %>
-      <br/>
-      <b>Zip: </b><%= @user.billing_address[:zip] %>
-    <br/>
+        <%= render "shared/billing_address" %>
+      </div>
       </p>
+      <p>
       <div class="shipping-address"> 
-        <b>Country: </b><%= @user.billing_address[:country] %>
-      <br/>
-      <b>City: </b><%= @user.billing_address[:city] %>
-    <br/>
-    <b>State: </b><%= @user.billing_address[:state] %>
-  <br/>
-  <b>Street1: </b><%= @user.billing_address[:street1] %>
-<br/>
-<b>Street2: </b><%= @user.billing_address[:street2] %>
-      <br/>
-      <b>Zip: </b><%= @user.billing_address[:zip] %>
-    <br/>
+        <%= render "shared/shipping_address" %>
       </div>
       <p>
       <%= link_to("Edit Account", edit_user_registration_path, class: "btn-square-less-space") %>
