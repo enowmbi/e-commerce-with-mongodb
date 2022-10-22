@@ -24,6 +24,73 @@
       <%= f.email_field :email, autocomplete: "email" %>
     </div>
 
+    <div>
+      <p>
+      <strong>Billing Address: </strong>
+      <%= f.fields_for :billing_address do |billing_address_form| %>
+        <div class="address">
+          <div>
+            <%= billing_address_form.label :city, style: "display: block" %>
+            <%= billing_address_form.text_field :city %>
+          </div>
+          <div>
+            <%= billing_address_form.label :state, style: "display: block" %>
+            <%= billing_address_form.text_field :state %>
+          </div>
+          <div>
+            <%= billing_address_form.label :country, style: "display: block" %>
+            <%= billing_address_form.text_field :country %>
+          </div>
+        <div>
+          <%= billing_address_form.label :street1, style: "display: block" %>
+          <%= billing_address_form.text_field :street1 %>
+        </div>
+        <div>
+          <%= billing_address_form.label :street2, style: "display: block" %>
+          <%= billing_address_form.text_field :street2 %>
+        </div>
+        <div>
+          <%= billing_address_form.label :zip, style: "display: block" %>
+          <%= billing_address_form.text_field :zip %>
+        </div>
+        </div>
+      <% end %>
+      </p>
+    </div>
+
+    <div>
+      <p>
+      <strong>Shipping Address: </strong>
+      <%= f.fields_for :shipping_address do |shipping_address_form| %>
+        <div class="address">
+          <div>
+            <%= shipping_address_form.label :city, style: "display: block" %>
+            <%= shipping_address_form.text_field :city %>
+          </div>
+          <div>
+            <%= shipping_address_form.label :state, style: "display: block" %>
+            <%= shipping_address_form.text_field :state %>
+          </div>
+          <div>
+            <%= shipping_address_form.label :country, style: "display: block" %>
+            <%= shipping_address_form.text_field :country %>
+          </div>
+        <div>
+          <%= shipping_address_form.label :street1, style: "display: block" %>
+          <%= shipping_address_form.text_field :street1 %>
+        </div>
+        <div>
+          <%= shipping_address_form.label :street2, style: "display: block" %>
+          <%= shipping_address_form.text_field :street2 %>
+        </div>
+        <div>
+          <%= shipping_address_form.label :zip, style: "display: block" %>
+          <%= shipping_address_form.text_field :zip %>
+        </div>
+        </div>
+      <% end %>
+      </p>
+    </div>
     <div class="field">
       <%= f.label :password %>
       <% if @minimum_password_length %>
