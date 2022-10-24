@@ -18,18 +18,41 @@
 
   <div>
     <%= form.label :tags, style: "display: block" %>
-    <%= form.text_field :tags %>
+    <%= form.text_field :tags, multiple: true %>
   </div>
 
   <div>
     <%= form.label :categories, style: "display: block" %>
-    <%= form.text_field :categories %>
+    <%= form.text_field :categories,  multiple: true %>
   </div>
+  <hr/>
 
-  <div>
-    <%= form.label :skus, style: "display: block" %>
-    <%= form.text_field :skus %>
-  </div>
+  <%# <div> %>
+    <%# <%= form.label :skus, style: "display: block" %1> %>
+    <%# <%= form.text_field :skus %1> %>
+  <%# </div> %>
+<div>
+  <%= form.fields_for :skus do |sku| %>
+    <div>
+      <%= sku.label :sku, style: "display: block" %>
+      <%= sku.text_field :sku %>
+    </div>
+    <div>
+      <%= sku.label :price, style: "display: block" %>
+      <%= sku.text_field :price %>
+    </div>
+    <div>
+      <%= sku.label :quantity_in_stock, style: "display: block" %>
+      <%= sku.text_field :quantity_in_stock %>
+    </div>
+    <div>
+      <%= sku.label :feature, style: "display: block" %>
+      <%= sku.text_field :feature %>
+    </div>
+  <% end %>
+</div>
+
+
 
   <div>
     <%= form.submit %>
