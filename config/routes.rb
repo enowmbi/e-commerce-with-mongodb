@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   resources :orders
 
-  resources :products
+  resources :products do
+    resources :skus
+  end
 end

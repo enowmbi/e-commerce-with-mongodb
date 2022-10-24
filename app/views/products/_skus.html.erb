@@ -1,0 +1,9 @@
+<main>
+  <h2>Skus</h2>
+
+  <div id="products">
+    <% @product.skus.each do |sku_item| %>
+      <%= render "skus/sku", sku_item: sku_item %>
+    <% end %>
+  </div>
+</main>

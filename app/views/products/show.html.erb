@@ -1,5 +1,3 @@
-<p style="color: green"><%= notice %></p>
-
 <%= render @product %>
 
 <div>
@@ -8,3 +6,6 @@
 
   <%= button_to "Destroy this product", @product, method: :delete %>
 </div>
+<%= render "skus/form" %>
+<hr/>
+<%= render "products/skus", product: @product %>
