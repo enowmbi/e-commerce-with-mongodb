@@ -5,6 +5,7 @@
     <% @products.each do |product| %>
       <%= render product %>
       <p>
+      <%= button_to "Add to cart", cart_path(current_user), params: { product_id: product } %>
       <%= link_to "Show this product", product %>
       </p>
     <% end %>
