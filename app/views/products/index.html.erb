@@ -3,9 +3,9 @@
 
   <div id="products">
     <% @products.each do |product| %>
-      <%= render product %>
+      <%= render "products/product", product: product %>
       <p>
-      <%= button_to "Add to cart", cart_path(current_user), params: { product_id: product } %>
+      <%= button_to "Add to cart", carts_path(current_user), params: { product: product } %>
       <%= link_to "Show this product", product %>
       </p>
     <% end %>

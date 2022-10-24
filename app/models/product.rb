@@ -6,4 +6,8 @@ class Product
   field :categories, type: Array
 
   embeds_many :skus
+
+  # def to_key
+    # Time.current.to_i
+  # end
 end

@@ -10,4 +10,5 @@ class Item
   field :extended_price, type: BigDecimal
 
   embedded_in :order
+  embedded_in :cart
 end

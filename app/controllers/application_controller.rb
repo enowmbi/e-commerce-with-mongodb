@@ -11,8 +11,6 @@ class ApplicationController < ActionController::Base
 
   private
 
-  # @address_attributes = %I[country city state street1 street2 zip]
-
   def whitelist_devise_parameters_for_signup
     devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:last_name])
