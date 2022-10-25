@@ -19,7 +19,6 @@
       </div>
       <p>
       <%= button_to "Add to cart", cart_path(current_user), params: { product: product } %>
-      <%= link_to "Show this product", product_path(product["_id"]) %>
       </p>
     <% end %>
   </div>

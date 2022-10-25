@@ -16,22 +16,22 @@
 
   <p>
   <strong>Sku:</strong>
-  <%= product.skus[0].sku %>
+  <%= product.skus[0]&.sku %>
   </p>
 
   <p>
   <strong>Price:</strong>
-  <%= product.skus[0].price %>
+  <%= product.skus[0]&.price %>
   </p>
 
   <p>
   <strong>Quantity in stock:</strong>
-  <%= product.skus[0].quantity_in_stock %>
+  <%= product.skus[0]&.quantity_in_stock %>
   </p>
 
   <p>
   <strong>Feature:</strong>
-  <%= product.skus[0].feature %>
+  <%= product.skus[0]&.feature %>
   </p>
 
 </div>
