@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     member do
-      resource :carts, only: [:create]
+      resource :cart, only: [:create, :show]
     end
   end
 

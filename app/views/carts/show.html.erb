@@ -1,0 +1,9 @@
+<main>
+  You have the following items in your cart:
+  <p>
+  <%= current_user.cart.items %>
+  </p>
+  <p>
+  <%= button_to("Checkout",root_path) %>
+  </p>
+</main>

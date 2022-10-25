@@ -16,7 +16,7 @@
         <li><%= link_to("Signup", new_user_registration_path) %></li>
         <li><%= link_to("Signin", new_user_session_path) %></li>
       <% end %>
-      <li><%= link_to(image_tag("cart.png", class: "shopping-cart", alt: "shopping cart"), root_path) %></li>
+      <li><%= link_to(image_tag("cart.png", class: "shopping-cart", alt: "shopping cart"), cart_path(current_user)) %></li>
     </ul>
   </nav>
 </header>

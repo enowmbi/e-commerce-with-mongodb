@@ -17,4 +17,6 @@ class CartsController < ApplicationController
     user.cart.items << item
     user.save!
   end
+
+  def show; end
 end
