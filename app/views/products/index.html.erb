@@ -13,6 +13,9 @@
         <h4 style="text-align: center">
           <%= product["skus"]["feature"] %>
         </h4>
+        <h4 style="text-align: center">
+          <%= number_to_currency(product["skus"]["price"]) %>
+        </h4>
       </div>
       <p>
       <%= button_to "Add to cart", cart_path(current_user), params: { product: product } %>
