@@ -46,4 +46,5 @@ class User
 
   embeds_one :billing_address
   embeds_one :shipping_address
+  embeds_one :cart
 end
