@@ -19,6 +19,6 @@ class SkusController < ApplicationController
   private
 
   def sku_params
-    params.require(:sku).permit(:sku, :price, :quantity_in_stock, :feature)
+    params.require(:sku).permit(:sku, :price, :quantity_in_stock, :feature, :image)
   end
 end

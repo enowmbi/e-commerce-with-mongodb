@@ -5,9 +5,5 @@ class Product
   field :tags, type: Array
   field :categories, type: Array
 
-  embeds_many :skus
-
-  # def to_key
-    # Time.current.to_i
-  # end
+  embeds_many :skus, cascade_callbacks: true
 end

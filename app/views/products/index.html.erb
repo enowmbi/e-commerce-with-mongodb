@@ -3,10 +3,23 @@
 
   <div id="products">
     <% @products.each do |product| %>
-      <%= render "products/product", product: product %>
+      <div class="col-4">
+        <% if product["skus"]["image_file_name"].present? %>
+          <%= link_to(image_tag(product["skus"]["image_file_name"], alt: "bange"), product_path(product["_id"])) %>
+        <% else %>
+          <%= link_to(image_tag("user-preview.png", alt: "bange"), product_path(product["_id"])) %>
+        <% end %>
+
+        <h4 style="text-align: center">
+          <%# <%= variant.product.name %1> %>
+        </h4>
+        <h4 style="text-align: center">
+          <%# <%= variant.feature %1> %>
+        </h4>
+      </div>
       <p>
       <%= button_to "Add to cart", cart_path(current_user), params: { product: product } %>
-      <%= link_to "Show this product", product %>
+      <%= link_to "Show this product", product_path(product["_id"]) %>
       </p>
     <% end %>
   </div>

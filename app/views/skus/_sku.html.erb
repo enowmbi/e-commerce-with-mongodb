@@ -1,5 +1,14 @@
 <div id="<%= dom_id sku_item %>">
   <p>
+  <strong>Image:</strong>
+  <% if sku_item.image.present? %>
+    <%= image_tag(sku_item.image.url(:medium), class: "image") %>                                         
+  <% else %>
+    <%= image_tag("user-preview.png", class: "image") %>                                         
+  <% end %>
+  </p>
+
+  <p>
     <strong>Sku:</strong>
     <%= sku_item.sku %>
   </p>

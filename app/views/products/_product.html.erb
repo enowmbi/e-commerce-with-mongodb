@@ -1,37 +1,37 @@
-<%# <div id="<%= dom_id product %1>"> %>
+<div id="<%= dom_id product %>">
   <p>
   <strong>Name:</strong>
-  <%= product["name"] %>
+  <%= product.name %>
   </p>
 
   <p>
   <strong>Tags:</strong>
-  <%= product["tags"] %>
+  <%= product.tags %>
   </p>
 
   <p>
   <strong>Categories:</strong>
-  <%= product["categories"] %>
+  <%= product.categories %>
   </p>
 
   <p>
   <strong>Sku:</strong>
-  <%= product["skus"]["sku"] %>
+  <%= product.skus[0].sku %>
   </p>
 
   <p>
   <strong>Price:</strong>
-  <%= product["skus"]["price"] %>
+  <%= product.skus[0].price %>
   </p>
 
   <p>
   <strong>Quantity in stock:</strong>
-  <%= product["skus"]["quantity_in_stock"] %>
+  <%= product.skus[0].quantity_in_stock %>
   </p>
 
   <p>
   <strong>Feature:</strong>
-  <%= product["skus"]["feature"] %>
+  <%= product.skus[0].feature %>
   </p>
 
 </div>
