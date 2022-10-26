@@ -1,9 +1,60 @@
 <main>
   You have the following items in your cart:
+  <div id="order-details">
+    <table>
+      <thead>
+        <tr>
+          <th>S/N</th>
+          <th>Product Name</th>
+          <th>SKU</th>
+          <th colspan=2>Action</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.items.each_with_index do |item, index| %>
+          <tr>
+            <% adjusted_index = index + 1 %>
+            <td><%= justify_serial_number(adjusted_index) %></td>
+            <td><%= truncate("#{item.name}-#{item.feature}",length: 50) %></td>
+            <td><%= truncate(item.sku.upcase, length: 10) %></td>
+            <td>
+              <%= button_to "+", increase_item_count_cart_path, params: {item_id: item._id }, class: "btn-small" %>
+            </td>
+            <td>
+              <%= button_to "-", decrease_item_count_cart_path, params: { item_id: item._id }, class: "btn-small" %>
+            </td>
+            <td id=<%= "quantity_#{item.id}" %>>
+              <%= justify_quantity(item.quantity) %>
+            </td>
+            <td><%= number_to_currency(item.price) %></td>
+            <td id=<%= "extended_price_#{item.id}" %>>
+              <%= number_to_currency(item.price * item.quantity) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th colspan= "1"></th>
+          <th colspan= "6">Total Amount</th>
+          <th id="total_amount"><%= number_to_currency(@cart.total) %></th>
+        </tr>
+      </tfoot>
+    </table>
+    <hr/>
+  </div>
+
   <p>
-  <%= current_user.cart.items %>
-  </p>
-  <p>
-  <%= button_to("Checkout", checkout_path) %>
+  <div class="container">
+    <%= form_with url: checkouts_path, data: {turbo: false} do %>
+      <div>
+        <%# <%= hidden_field_tag  :order_id, @order.id %1> %>
+      </div>
+      <%= submit_tag "Pay with a Card", class: "btn-square" %>
+    <% end %>
+  </div>
   </p>
 </main>

@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   resources :users, only: :show do
     member do
-      resource :cart, only: [:create, :show]
+      resource :cart, only: %I[create show] do
+        member do
+          post :increase_item_count
+          post :decrease_item_count
+        end
+      end
     end
   end
 
@@ -14,4 +19,6 @@ Rails.application.routes.draw do
   resources :products do
     resources :skus
   end
+
+  resources :checkouts, only: :create
 end

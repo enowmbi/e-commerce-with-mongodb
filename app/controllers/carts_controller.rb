@@ -11,12 +11,24 @@ class CartsController < ApplicationController
     item.extended_price = price * item.quantity
     item.feature = params[:product][:skus][:feature]
 
-    cart.items << item
-
     user = User.find(current_user.id)
-    user.cart.items << item
+
+    if user.cart
+      user.cart.items << item
+    else
+      cart.items << item
+      user.cart = cart
+    end
+
     user.save!
   end
 
-  def show; end
+  def show
+    @cart = current_user.cart
+  end
+
+  def increase_item_count
+  end
+  def decrease_item_count
+  end
 end
