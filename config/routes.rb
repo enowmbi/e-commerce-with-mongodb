@@ -14,7 +14,13 @@ Rails.application.routes.draw do
 
   devise_for :user
 
-  resources :orders
+  resources :orders do
+    resources :payments
+    member do
+      get :success
+      get :failure
+    end
+  end
 
   resources :products do
     resources :skus
