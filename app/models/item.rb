@@ -5,7 +5,8 @@ class Item
   field :name, type: String
   field :sku, type: String
   field :quantity, type: Integer
-  field :price, type: BigDecimal
+  field :currency, type: String, default: "usd"
+  field :price, type: BigDecimal, as: :amount
   field :feature, type: String
   field :extended_price, type: BigDecimal
 
